@@ -5,18 +5,20 @@
   <version>2.0.0</version>
   <name>ClassFinder</name>
   <description>ClassFinder finds Java classes within jar, ear, war and zip files.</description>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
   <build>
-    <sourceDirectory>src</sourceDirectory>
+    <!--sourceDirectory>src</sourceDirectory-->
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
       </plugin>
-      <plugin>
+      <!--plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.10.3</version>
@@ -24,7 +26,7 @@
           <sourcepath>src/main/java</sourcepath>
           <nohelp>true</nohelp>
         </configuration>
-      </plugin>
+      </plugin-->
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
@@ -34,10 +36,18 @@
             </manifest>
           </archive>
           <descriptorRefs>
-            <descriptorRef>src</descriptorRef>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
         </configuration>
+		<executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

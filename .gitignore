@@ -1,4 +1,6 @@
 /bin
 /out
 /target/
-.*
+*.iml
+*.log
+/.idea/
