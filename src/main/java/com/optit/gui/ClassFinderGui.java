@@ -1,5 +1,6 @@
 package com.optit.gui;
 
+import java.awt.Component;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,8 +25,8 @@ import com.optit.ClassFinder;
 import com.optit.Parameters;
 import com.optit.SearchableFileFilter;
 import com.optit.logger.GuiLogger;
+
 import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 /**
  * 
@@ -91,6 +92,7 @@ public class ClassFinderGui {
 		
 		JButton btnBrowse = new JButton("Browse");
 		btnBrowse.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 		        if (fc.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
 		        	tfJarFileFolder.setText(fc.getSelectedFile().getAbsolutePath());
@@ -102,6 +104,7 @@ public class ClassFinderGui {
 		// Make search button default for ENTER key
 		frame.getRootPane().setDefaultButton(btnSearch);
 		btnSearch.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				performSearch();
 			}

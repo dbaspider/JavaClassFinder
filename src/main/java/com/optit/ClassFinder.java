@@ -59,6 +59,7 @@ public class ClassFinder implements Runnable {
 				// No exception got thrown, continue
 				EventQueue.invokeLater(
 					new Runnable() {
+						@Override
 						public void run() {
 							try {
 								new ClassFinderGui();
