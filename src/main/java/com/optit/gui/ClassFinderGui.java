@@ -71,7 +71,7 @@ public class ClassFinderGui {
 	private void initialize()
 		throws HeadlessException {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 640, 480);
+		frame.setBounds(100, 100, 1200, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("ClassFinder");
 		

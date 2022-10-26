@@ -8,8 +8,10 @@
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+	<maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+	<skipTests>true</skipTests>
   </properties>
   
   <build>
@@ -56,6 +58,7 @@
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
   		<version>4.11</version>
+      <scope>test</scope>
   	</dependency>
   </dependencies>
 </project>
